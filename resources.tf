@@ -1,10 +1,10 @@
 #images
 resource "docker_image" "bgg-database" {
-    name = "chukmunlee/bgg-database:${var.database_version}"
+    name = "chukmunnlee/bgg-database:${var.database_version}"
 }
 
 resource "docker_image" "bgg-backend" {
-    name = "chukmunlee/bgg-backend:${var.backend_version}"
+    name = "chukmunnlee/bgg-backend:${var.backend_version}"
 }
 
 resource "docker_network" "bgg-net" {
