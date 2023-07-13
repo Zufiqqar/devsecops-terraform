@@ -58,7 +58,7 @@ resource "docker_container" "bgg-backend" {
             ports = docker_container.bgg-backend([*].ports[0].external)
         })
     }
-    data "digitalocean_ssh_key" "devsecops" {
+    data "digitalocean_ssh_key" "www-1" {
         name = var.do_ssh_key
     }
 
@@ -67,7 +67,7 @@ resource "docker_container" "bgg-backend" {
         image = var.do_image
         region = var.do_region
         size = var.do_size
-        ssh_keys = [ data.data.digitalocean_ssh_key.devsecops.id ]
+        ssh_keys = [ data.data.digitalocean_ssh_key.www-1.id ]
 
         connection { 
             type ="ssh"
