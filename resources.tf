@@ -7,7 +7,7 @@ resource "docker_image" "bgg-backend" {
     name = "chukmunlee/bgg-backend:${var.backend_version}"
 }
 
-resource "docker_network" "bgg-network" {
+resource "docker_network" "bgg-net" {
     name = "${var.app_namespace}-bgg-net"
 }
 
@@ -67,7 +67,7 @@ resource "docker_container" "bgg-backend" {
         image = var.do_image
         region = var.do_region
         size = var.do_size
-        ssh_keys = [ data.data.digitalocean_ssh_key.www-1.id ]
+        ssh_keys = [ data.digitalocean_ssh_key.www-1.id ]
 
         connection { 
             type ="ssh"
