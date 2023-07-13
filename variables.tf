@@ -1,21 +1,22 @@
-variable do_token { 
+variable do_token {
     type = string
     sensitive = true
 }
 
-variable docker_host  {
-    type = string
-} 
+variable docker_host {
+    type = string 
+}
 
 variable docker_cert_path {
-    type = string 
+    type = string
     sensitive = true
 }
 
 variable app_namespace {
     type = string
-    default = "sg" 
-    }
+    default = "sg"
+}
+
 variable database_version {
     type = string
     default = "v3.1"
@@ -36,12 +37,12 @@ variable do_region {
     default = "sgp1"
 }
 
-varaiable do_image {
+variable do_image {
     type = string
     default = "ubuntu-20-04-x64"
 }
 
-varaiable do_size {
+variable do_size {
     type = string
     default = "s-1vcpu-512mb-10gb"
 }
